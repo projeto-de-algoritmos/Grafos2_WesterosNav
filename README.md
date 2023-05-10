@@ -10,7 +10,7 @@
 |Matrícula | Aluno |
 | -- | -- |
 | 20/0028472  |  Vinícius Assumpção de Araújo T01 |
-| 20/  |  Vitor Hugo Oliveira Leão T02 |
+| 20/0028367  |  Vitor Hugo Oliveira Leão T02 |
 
 
 
