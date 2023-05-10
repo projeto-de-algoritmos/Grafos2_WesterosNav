@@ -35,7 +35,7 @@ O projeto tarta-se de um jogo que, a partir de uma cidade de westeros escolhida 
 ## Instalação 
 **Linguagem**: Python<br>
 **Framework**: (caso exista)<br>
-Pré-requisitos : Apenas o python3 instalado, caso o avaliador queira rodar localmente os códigos, nop entanto isso pode ser feito também pelo próprio site da LeetCode, bastanto ter uma conta. 
+Pré-requisitos : 
 
 ## Uso 
 
