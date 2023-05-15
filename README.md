@@ -50,6 +50,8 @@ Assim, a outra aba será atualizada com o mapa, mostrando o menor caminho entre 
 
 ![Print 3 - Mapa com menor distância 1](./assets/print-3.png)
 
+Se essa aba estiver desproporcional em seu computador, é possível alterar os parâmetros WIDTH e HEIGHT no arquivo [params.py](https://github.com/projeto-de-algoritmos/Grafos2_WesterosNav/blob/master/WesterosNav/utils/params.py).
+
 Caso queira testar novamente o programa com outras cidades, só clicar no botão "Outra Vez" e repetir o primeiro passo de selecionar as cidades e clicar em "OK".
 
 ## Outros 
