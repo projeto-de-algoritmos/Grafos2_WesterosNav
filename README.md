@@ -26,7 +26,7 @@ O mapeamento, isto é, a operação de passar o mapa de Westeros para um grafo (
 
 ## Vídeo
 
-- [youtube]()
+- [youtube](https://www.youtube.com/watch?v=-AC-JlozkYk)
 
 ## Instalação 
 **Linguagem**: Python<br>
