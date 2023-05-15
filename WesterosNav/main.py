@@ -1,9 +1,6 @@
-import networkx as nx
 import random
 import pygame
 from pygame.locals import *
-from math import sqrt
-import json
 import PySimpleGUI as sg
 
 from mapa.grafo import *
