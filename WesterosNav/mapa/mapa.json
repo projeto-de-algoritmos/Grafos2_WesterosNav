@@ -1,94 +1,116 @@
 {
     "cities": [
         {
-            "id": 1,
-            "name": "Craster's Keep"
+          "id": 1,
+          "name": "Craster's Keep",
+          "posicoes": [225, 26]
         },
         {
-            "id": 2,
-            "name": "Hardhome"
+          "id": 2,
+          "name": "Hardhome",
+          "posicoes": [316, 44]
         },
         {
-            "id": 3,
-            "name": "Castle Black"
+          "id": 3,
+          "name": "Castle Black",
+          "posicoes": [266, 91]
         },
         {
-            "id": 4,
-            "name": "Karhold"
+          "id": 4,
+          "name": "Karhold",
+          "posicoes": [374, 149]
         },
         {
-            "id": 5,
-            "name": "Winterfell"
+          "id": 5,
+          "name": "Winterfell",
+          "posicoes": [211, 205]
         },
         {
-            "id": 6,
-            "name": "Whiteharbor"
+          "id": 6,
+          "name": "White Harbor",
+          "posicoes": [282, 320]
         },
         {
-            "id": 7,
-            "name": "The Twins"
+          "id": 7,
+          "name": "The Twins",
+          "posicoes": [193, 439]
         },
         {
-            "id": 8,
-            "name": "The Eyrie"
+          "id": 8,
+          "name": "The Eyrie",
+          "posicoes": [328, 451]
         },
         {
-            "id": 9,
-            "name": "Bloodygate"
+          "id": 9,
+          "name": "Bloody Gate",
+          "posicoes": [292, 499]
         },
         {
-            "id": 10,
-            "name": "Harrenhall"
+          "id": 10,
+          "name": "Harrenhall",
+          "posicoes": [251, 527]
         },
         {
-            "id": 11,
-            "name": "Riverrun"
+          "id": 11,
+          "name": "Riverrun",
+          "posicoes": [173, 509]
         },
         {
-            "id": 12,
-            "name": "Pyke (Iron Islands)"
+          "id": 12,
+          "name": "Pyke (Iron Islands)",
+          "posicoes": [64, 457]
         },
         {
-            "id": 13,
-            "name": "Casterly Rock"
+          "id": 13,
+          "name": "Casterly Rock",
+          "posicoes": [70, 561]
         },
         {
-            "id": 14,
-            "name": "King's Landing"
+          "id": 14,
+          "name": "King's Landing",
+          "posicoes": [288, 604]
         },
         {
-            "id": 15,
-            "name": "Dragonstone"
+          "id": 15,
+          "name": "Dragonstone",
+          "posicoes": [394, 588]
         },
         {
-            "id": 16,
-            "name": "Storm's End"
+          "id": 16,
+          "name": "Storm's End",
+          "posicoes": [344, 676]
         },
         {
-            "id": 17,
-            "name": "Highgarden"
+          "id": 17,
+          "name": "Highgarden",
+          "posicoes": [127, 724]
         },
         {
-            "id": 18,
-            "name": "Tower of Joy"
+          "id": 18,
+          "name": "Tower of Joy",
+          "posicoes": [215, 783]
         },
         {
-            "id": 19,
-            "name": "Blackmont"
+          "id": 19,
+          "name": "Blackmont",
+          "posicoes": [144, 813]
         },
         {
-            "id": 20,
-            "name": "Oldtown"
+          "id": 20,
+          "name": "Oldtown",
+          "posicoes": [58, 805]
         },
         {
-            "id": 21,
-            "name": "Sunhouse"
+          "id": 21,
+          "name": "Sunhouse",
+          "posicoes": [88, 855]
         },
         {
-            "id": 22,
-            "name": "Sunspear"
+          "id": 22,
+          "name": "Sunspear",
+          "posicoes": [318, 853]
         }
-    ],
+      ],
     "borders": [
         {
             "cidades": [
@@ -400,3 +422,4 @@
         }
     ]
 }
+
