@@ -17,7 +17,7 @@
 ## Sobre 
 O projeto tarta-se de um jogo que, a partir de uma cidade de westeros escolhida pelo jogador, leva a uma cidade de destino também escolhida. O jogo é ambientado em Westeros e opara calcular o desclocamento foi utilizado dijkstra, para o desenvolvimento do mapa e seus elementos foi utilizada a biblioteca pygame e para a manipulação do grafo foi utilizada a biblioteca networkx. 
 
-O mapeamento foi feito a partir do link: https://winteriscoming.net/2015/11/10/game-of-thrones-fan-tabulates-distances-between-places-in-westeros/
+O mapeamento foi feito a partir das seguintes fontes: https://winteriscoming.net/2015/11/10/game-of-thrones-fan-tabulates-distances-between-places-in-westeros/ e https://www.worldanvil.com/w/got-rewritten/a/travel
 
 ## Screenshots
 
