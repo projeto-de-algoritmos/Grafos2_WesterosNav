@@ -41,7 +41,10 @@ for i, node in enumerate(G.nodes()):
     node_positions[node] = (x, y)
 
 # Calcula o caminho mínimo usando o algoritmo de Dijkstra
-shortest_path = G.dijkstra(start_node, end_node)
+menor_caminho, distancia = G.dijkstra(start_node, end_node)
+
+nomes_formatados = [mapeamento[id] for id in menor_caminho]
+caminho = " -> ".join(nomes_formatados)
 
 if __name__ == "__main__":
     # Loop principal
@@ -75,14 +78,15 @@ if __name__ == "__main__":
 
         # Desenha o texto na tela
         draw_text(screen, "WesterosNav", (10, 10))
-        draw_text(screen, "Starting city: {}".format(start_node), (10, 40))
-        draw_text(screen, "Destination city: {}".format(end_node), (10, 70))
-        draw_text(screen, 'Caminho mínimo:', (10, 110))
+        draw_text(screen, "Cidade de Origem: {}".format(start_node), (10, 40))
+        draw_text(screen, "Cidade de Destino: {}".format(end_node), (10, 70))
+        draw_text(screen, "Caminho Mínimo: {}".format(caminho), (10, 110))
+        draw_text(screen, "Distância em Milhas: {}".format(str(distancia)), (10, 150))
 
         # Desenha o caminho mínimo em azul
-        for i in range(len(shortest_path)-1):
-            pos1 = node_positions[shortest_path[i]]
-            pos2 = node_positions[shortest_path[i+1]]
+        for i in range(len(menor_caminho)-1):
+            pos1 = node_positions[menor_caminho[i]]
+            pos2 = node_positions[menor_caminho[i+1]]
             pygame.draw.line(screen, (0, 0, 255), pos1, pos2, 3)
             pygame.display.update()
             pygame.time.wait(500)

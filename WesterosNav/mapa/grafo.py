@@ -70,7 +70,8 @@ class Grafo:
             atual = ant[atual]
 
         caminho.reverse()
-        return caminho
+        distancia = dist[fim]
+        return caminho, distancia
 
 def gera_grafo(path):
     # Cria o grafo e o dicionario de mapeamento
