@@ -9,6 +9,9 @@ from utils.interface import *
 # Criação do Grafo
 G, mapeamento = gera_grafo('./mapa/mapa.json')
 
+# Criação do dicionário para armazenar as posições dos nós
+posicoes_cidade = cidades_posicao(G)
+
 # Inicialização do Pygame Mixer (áudio)
 pygame.mixer.init()
 pygame.mixer.music.load("./media/musica.mp3") # Carregamento da trilha sonora
@@ -20,32 +23,43 @@ pygame.init()
 
 # Criação da tela
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("WesterosNav")
 sg.theme('DarkGrey') # Define um tema personalizado para a janela
 font = ('Helvetica', 14) # Define a fonte e o tamanho do texto
 
-# Cria um layout customizado para a janela do PySimpleGUI
-layout = [[sg.Text('Cidade de origem:', font=font), sg.DropDown(opcoes_cidades(mapeamento), key='start_node', font=font)],
-          [sg.Text('Cidade de destino:', font=font), sg.DropDown(opcoes_cidades(mapeamento), key='end_node', font=font)],
-          [sg.Button('OK', font=font, button_color=('white', '#1E90FF'))]
-        ]
+start_node, end_node, menor_caminho, distancia, caminho = -1, -1, [], 0, ""
 
-# Janela para receber o nó de origem e destino
-start_node, end_node = open_window(layout)
+def define_nodes():
+    """
+    Carrega a janela para receber os nós de origem e destino e calcula o caminho e distância mínimos usando Dijkstra
+    """
+    global start_node, end_node, menor_caminho, distancia, caminho
+    # Cria um layout customizado para a janela do PySimpleGUI
+    layout = [[sg.Text('Cidade de origem:', font=font), sg.DropDown(opcoes_cidades(mapeamento), key='start_node', font=font)],
+            [sg.Text('Cidade de destino:', font=font), sg.DropDown(opcoes_cidades(mapeamento), key='end_node', font=font)],
+            [sg.Button('OK', font=font, button_color=('white', '#1E90FF'))]
+            ]
+    start_node, end_node = open_window(layout)
 
-# Calcula o caminho mínimo usando o algoritmo de Dijkstra
-menor_caminho, distancia = G.dijkstra(start_node, end_node)
-caminho = " -> ".join([mapeamento[id] for id in menor_caminho]) # Passa a lista de menor caminho para uma string com o nome das cidades
+    menor_caminho, distancia = G.dijkstra(start_node, end_node)
+    caminho = " -> ".join([mapeamento[id] for id in menor_caminho]) # Passa a lista de menor caminho para uma string com o nome das cidades
 
-# Criação do dicionário para armazenar as posições dos nós
-node_positions = cidades_posicao(G)
 
 if __name__ == "__main__":
+    # Chama a tela de definir os vértices a serem calculadas pela primeira vezs
+    define_nodes()
+
     # Loop principal
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:  # Clique com o botão esquerdo do mouse
+                    mouse_pos = pygame.mouse.get_pos()
+                    if 10 <= mouse_pos[0] <= BUTTON_X + BUTTON_WIDTH and 10 <= mouse_pos[1] <= BUTTON_Y + BUTTON_HEIGHT:
+                        define_nodes()
 
         # Limpa a tela
         screen.fill((0, 0, 0))
@@ -57,10 +71,10 @@ if __name__ == "__main__":
 
         # Desenha as arestas do grafo
         for u, v, _ in G.edges():
-            draw_edge(screen, node_positions[u], node_positions[v])
+            draw_edge(screen, posicoes_cidade[u], posicoes_cidade[v])
 
         # Desenha os nós
-        for node, pos in node_positions.items():
+        for node, pos in posicoes_cidade.items():
             if node == start_node:
                 draw_node(screen, pos, START_COLOR)
             elif node == end_node:
@@ -75,9 +89,12 @@ if __name__ == "__main__":
         draw_text(screen, "Caminho Mínimo: {}".format(caminho), (10, 110))
         draw_text(screen, "Distância em Milhas: {}".format(str(distancia)), (10, 150))
 
+        # Desenha o botão
+        draw_button(screen)
+
         # Desenha o caminho mínimo em azul
         for i in range(len(menor_caminho)-1):
-            pygame.draw.line(screen, (0, 0, 255), node_positions[menor_caminho[i]], node_positions[menor_caminho[i+1]], 3)
+            pygame.draw.line(screen, (0, 0, 255), posicoes_cidade[menor_caminho[i]], posicoes_cidade[menor_caminho[i+1]], 3)
             pygame.display.update()
             pygame.time.wait(500)
 

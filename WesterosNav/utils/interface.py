@@ -30,6 +30,19 @@ def draw_text(screen, text, pos):
     screen.blit(text_shadow, (pos[0]+2, pos[1]+2))
     screen.blit(text_surface, pos)
 
+# Função para desenhar o botão com texto
+def draw_button(screen):
+    """
+    Desenha um botão na tela do mapa do pygame
+    """
+    pygame.draw.rect(screen, WHITE, (BUTTON_X, BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT))
+    
+    font = pygame.font.Font(None, 24)
+    text_surface = font.render("Outra Vez", True, BLACK)
+    text_rect = text_surface.get_rect(center=(BUTTON_X + BUTTON_WIDTH/2, BUTTON_Y + BUTTON_HEIGHT/2))
+    
+    screen.blit(text_surface, text_rect)
+
 def cidades_posicao(grafo):
     """
     Determina a posição das cidades no mapa
