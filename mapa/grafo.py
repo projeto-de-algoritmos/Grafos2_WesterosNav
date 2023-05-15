@@ -3,7 +3,7 @@ import json
 class Vertice:
     def __init__(self, id):
         self.id = id
-        self.distancia = float('inf')
+        self.distancia = int
     
     def __repr__(self):
         return str(self.id)
