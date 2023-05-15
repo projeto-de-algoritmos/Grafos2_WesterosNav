@@ -6,6 +6,23 @@ from mapa.grafo import *
 from utils.params import *
 from utils.interface import *
 
+import json
+
+# Carrega os dados do arquivo JSON
+with open('./mapa/mapa.json') as json_file:
+    data = json.load(json_file)
+
+
+# Extrai as informações das cidades e das fronteiras
+cities = data['cities']
+
+# Função para obter o nome da cidade pelo ID
+def get_city_name(city_id):
+    for city in cities:
+        if city['id'] == city_id:
+            return city['name']
+    return None
+
 # Criação do Grafo
 G, mapeamento, posicoes_cidade = gera_grafo('./mapa/mapa.json')
 
@@ -104,8 +121,8 @@ if __name__ == "__main__":
 
         # Desenha os textos na tela
         draw_text(screen, "WesterosNav", (10, 10), 200)
-        draw_text(screen, "Cidade de Origem: {}".format(start_node), (10, 40), 200)
-        draw_text(screen, "Cidade de Destino: {}".format(end_node), (10, 60), 200)
+        draw_text(screen, "Cidade de Origem: {}".format(get_city_name(start_node)), (10, 40), 300)
+        draw_text(screen, "Cidade de Destino: {}".format(get_city_name(end_node)), (10, 60), 300)
         draw_text(screen, "Caminho Mínimo: {}".format(caminho), (10, 90), 300)
         draw_text(screen, "Distância em Milhas: {}".format(str(distancia)), (10, 170), 200)
 
