@@ -1,0 +1,402 @@
+{
+    "cities": [
+        {
+            "id": 1,
+            "name": "Craster's Keep"
+        },
+        {
+            "id": 2,
+            "name": "Hardhome"
+        },
+        {
+            "id": 3,
+            "name": "Castle Black"
+        },
+        {
+            "id": 4,
+            "name": "Karhold"
+        },
+        {
+            "id": 5,
+            "name": "Winterfell"
+        },
+        {
+            "id": 6,
+            "name": "Whiteharbor"
+        },
+        {
+            "id": 7,
+            "name": "The Twins"
+        },
+        {
+            "id": 8,
+            "name": "The Eyrie"
+        },
+        {
+            "id": 9,
+            "name": "Bloodygate"
+        },
+        {
+            "id": 10,
+            "name": "Harrenhall"
+        },
+        {
+            "id": 11,
+            "name": "Riverrun"
+        },
+        {
+            "id": 12,
+            "name": "Pyke (Iron Islands)"
+        },
+        {
+            "id": 13,
+            "name": "Casterly Rock"
+        },
+        {
+            "id": 14,
+            "name": "King's Landing"
+        },
+        {
+            "id": 15,
+            "name": "Dragonstone"
+        },
+        {
+            "id": 16,
+            "name": "Storm's End"
+        },
+        {
+            "id": 17,
+            "name": "Highgarden"
+        },
+        {
+            "id": 18,
+            "name": "Tower of Joy"
+        },
+        {
+            "id": 19,
+            "name": "Blackmont"
+        },
+        {
+            "id": 20,
+            "name": "Oldtown"
+        },
+        {
+            "id": 21,
+            "name": "Sunhouse"
+        },
+        {
+            "id": 22,
+            "name": "Sunspear"
+        }
+    ],
+    "borders": [
+        {
+            "cidades": [
+                1,
+                2
+            ],
+            "distancia": 200
+        },
+        {
+            "cidades": [
+                1,
+                3
+            ],
+            "distancia": 60
+        },
+        {
+            "cidades": [
+                2,
+                3
+            ],
+            "distancia": 300
+        },
+        {
+            "cidades": [
+                3,
+                4
+            ],
+            "distancia": 400
+        },
+        {
+            "cidades": [
+                3,
+                5
+            ],
+            "distancia": 650
+        },
+        {
+            "cidades": [
+                4,
+                5
+            ],
+            "distancia": 610
+        },
+        {
+            "cidades": [
+                4,
+                6
+            ],
+            "distancia": 950
+        },
+        {
+            "cidades": [
+                5,
+                6
+            ],
+            "distancia": 340
+        },
+        {
+            "cidades": [
+                5,
+                7
+            ],
+            "distancia": 615
+        },
+        {
+            "cidades": [
+                5,
+                10
+            ],
+            "distancia": 1160
+        },
+        {
+            "cidades": [
+                5,
+                22
+            ],
+            "distancia": 1550
+        },
+        {
+            "cidades": [
+                6,
+                7
+            ],
+            "distancia": 275
+        },
+        {
+            "cidades": [
+                7,
+                8
+            ],
+            "distancia": 200
+        },
+        {
+            "cidades": [
+                7,
+                9
+            ],
+            "distancia": 250
+        },
+        {
+            "cidades": [
+                7,
+                10
+            ],
+            "distancia": 300
+        },
+        {
+            "cidades": [
+                7,
+                11
+            ],
+            "distancia": 250
+        },
+        {
+            "cidades": [
+                7,
+                12
+            ],
+            "distancia": 175
+        },
+        {
+            "cidades": [
+                8,
+                9
+            ],
+            "distancia": 70
+        },
+        {
+            "cidades": [
+                9,
+                10
+            ],
+            "distancia": 100
+        },
+        {
+            "cidades": [
+                10,
+                11
+            ],
+            "distancia": 70
+        },
+        {
+            "cidades": [
+                10,
+                14
+            ],
+            "distancia": 350
+        },
+        {
+            "cidades": [
+                11,
+                12
+            ],
+            "distancia": 150
+        },
+        {
+            "cidades": [
+                11,
+                13
+            ],
+            "distancia": 400
+        },
+        {
+            "cidades": [
+                12,
+                13
+            ],
+            "distancia": 600
+        },
+        {
+            "cidades": [
+                13,
+                14
+            ],
+            "distancia": 830
+        },
+        {
+            "cidades": [
+                13,
+                14
+            ],
+            "distancia": 830
+        },
+        {
+            "cidades": [
+                13,
+                17
+            ],
+            "distancia": 665
+        },
+        {
+            "cidades": [
+                14,
+                15
+            ],
+            "distancia": 250
+        },
+        {
+            "cidades": [
+                14,
+                16
+            ],
+            "distancia": 390
+        },
+        {
+            "cidades": [
+                14,
+                17
+            ],
+            "distancia": 760
+        },
+        {
+            "cidades": [
+                15,
+                16
+            ],
+            "distancia": 250
+        },
+        {
+            "cidades": [
+                15,
+                22
+            ],
+            "distancia": 1150
+        },
+        {
+            "cidades": [
+                16,
+                17
+            ],
+            "distancia": 700
+        },
+        {
+            "cidades": [
+                16,
+                18
+            ],
+            "distancia": 650
+        },
+        {
+            "cidades": [
+                16,
+                22
+            ],
+            "distancia": 650
+        },
+        {
+            "cidades": [
+                17,
+                18
+            ],
+            "distancia": 400
+        },
+        {
+            "cidades": [
+                17,
+                19
+            ],
+            "distancia": 350
+        },
+        {
+            "cidades": [
+                17,
+                20
+            ],
+            "distancia": 330
+        },
+        {
+            "cidades": [
+                18,
+                19
+            ],
+            "distancia": 150
+        },
+        {
+            "cidades": [
+                18,
+                22
+            ],
+            "distancia": 650
+        },
+        {
+            "cidades": [
+                19,
+                20
+            ],
+            "distancia": 160
+        },
+        {
+            "cidades": [
+                19,
+                21
+            ],
+            "distancia": 130
+        },
+        {
+            "cidades": [
+                20,
+                21
+            ],
+            "distancia": 160
+        },
+        {
+            "cidades": [
+                21,
+                22
+            ],
+            "distancia": 800
+        }
+    ]
+}
