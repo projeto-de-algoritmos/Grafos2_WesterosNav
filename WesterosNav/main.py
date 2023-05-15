@@ -10,7 +10,7 @@ from utils.interface import *
 # Criação do Grafo
 G, mapeamento = gera_grafo('./mapa/mapa.json')
 
-# Inicialização do Pygame Mixer
+# Inicialização do Pygame Mixer (áudio)
 pygame.mixer.init()
 pygame.mixer.music.load("./media/musica.mp3") # Carregamento da trilha sonora
 pygame.mixer.music.set_volume(0.3) # Definição do volume da trilha sonora
@@ -25,12 +25,12 @@ sg.theme('DarkGrey') # Define um tema personalizado para a janela
 font = ('Helvetica', 14) # Define a fonte e o tamanho do texto
 
 # Cria um layout customizado para a janela do PySimpleGUI
-layout = [[sg.Text('(Cidade)Nó de origem:', font=font), sg.DropDown(opcoes_cidades(mapeamento), key='start_node', font=font)],
-          [sg.Text('(Cidade)Nó de destino:', font=font), sg.DropDown(opcoes_cidades(mapeamento), key='end_node', font=font)],
+layout = [[sg.Text('Cidade de origem:', font=font), sg.DropDown(opcoes_cidades(mapeamento), key='start_node', font=font)],
+          [sg.Text('Cidade de destino:', font=font), sg.DropDown(opcoes_cidades(mapeamento), key='end_node', font=font)],
           [sg.Button('OK', font=font, button_color=('white', '#1E90FF'))]
         ]
 
-# Janela para calcular o nó de origem e destino
+# Janela para receber o nó de origem e destino
 start_node, end_node = open_window(layout)
 
 # Calcula o caminho mínimo usando o algoritmo de Dijkstra
@@ -56,12 +56,11 @@ if __name__ == "__main__":
         background_image = pygame.transform.scale(background_image, (WIDTH, HEIGHT))
         screen.blit(background_image, (0, 0))
 
-        # Desenha os nós e as arestas do grafo
+        # Desenha as arestas do grafo
         for u, v, _ in G.edges():
-            pos1 = node_positions[u]
-            pos2 = node_positions[v]
-            draw_edge(screen, pos1, pos2)
+            draw_edge(screen, node_positions[u], node_positions[v])
 
+        # Desenha os nós
         for node, pos in node_positions.items():
             if node == start_node:
                 draw_node(screen, pos, START_COLOR)
@@ -70,7 +69,7 @@ if __name__ == "__main__":
             else:
                 draw_node(screen, pos, (255, 255, 255))
 
-        # Desenha o texto na tela
+        # Desenha os textos na tela
         draw_text(screen, "WesterosNav", (10, 10))
         draw_text(screen, "Cidade de Origem: {}".format(start_node), (10, 40))
         draw_text(screen, "Cidade de Destino: {}".format(end_node), (10, 70))
@@ -79,9 +78,7 @@ if __name__ == "__main__":
 
         # Desenha o caminho mínimo em azul
         for i in range(len(menor_caminho)-1):
-            pos1 = node_positions[menor_caminho[i]]
-            pos2 = node_positions[menor_caminho[i+1]]
-            pygame.draw.line(screen, (0, 0, 255), pos1, pos2, 3)
+            pygame.draw.line(screen, (0, 0, 255), node_positions[menor_caminho[i]], node_positions[menor_caminho[i+1]], 3)
             pygame.display.update()
             pygame.time.wait(500)
 
