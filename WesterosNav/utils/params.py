@@ -1,4 +1,4 @@
-# Parâmetros do jogo
+# Parâmetros para o Pygame
 WIDTH = 800
 HEIGHT = 1000
 NODE_SIZE = 15

@@ -1,14 +1,16 @@
 import json
 
-class Vertice:
-    def __init__(self, id):
-        self.id = id
-        self.distancia = float('inf')
-    
-    def __repr__(self):
-        return str(self.id)
-
 class Grafo:
+    """
+    Classe que determina um grafo (lista de adjacência). Com os seguintes métodos:
+    - Adiciona vértice
+    - Adiciona aresta: vizinho e distância
+    - Imprime o grafo
+    - Nodes: retorna os nós
+    - Edges: retorna as arestas
+    - Vizinhos: pega os vizinhos de um vértice
+    - Dijkstra: algoritmo para retornar menor caminho e a distância
+    """
     def __init__(self):
         self.adjacencia = {}
 
@@ -27,12 +29,6 @@ class Grafo:
     
     def nodes(self):
         return list(self.adjacencia.keys())
-    
-    def vizinhos(self, vertice):
-        if vertice in self.adjacencia:
-            return [vizinho['vizinho'] for vizinho in self.adjacencia[vertice]]
-        else:
-            return []
 
     def edges(self):
         arestas = []
@@ -40,6 +36,12 @@ class Grafo:
             for vizinho in lista_adjacencia:
                 arestas.append((vertice, vizinho['vizinho'], vizinho['distancia']))
         return arestas
+    
+    def vizinhos(self, vertice):
+        if vertice in self.adjacencia:
+            return [vizinho['vizinho'] for vizinho in self.adjacencia[vertice]]
+        else:
+            return []
 
     def dijkstra(self, inicio, fim):
         dist = {vertice: float('inf') for vertice in self.nodes()}
@@ -74,7 +76,9 @@ class Grafo:
         return caminho, distancia
 
 def gera_grafo(path):
-    # Cria o grafo e o dicionario de mapeamento
+    """
+    A partir do arquivo json com o mapa, cria um grafo (cidades e fronteiras) e um mapeamento do id da cidade com seu nome
+    """
     grafo = Grafo()
     mapeamento = {}
 
@@ -96,4 +100,7 @@ def gera_grafo(path):
     return grafo, mapeamento
 
 def opcoes_cidades(mapeamento):
+    """
+    Retorna a cidade com seu id
+    """
     return [(id, nome) for id, nome in mapeamento.items()]

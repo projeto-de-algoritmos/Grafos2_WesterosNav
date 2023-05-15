@@ -30,21 +30,15 @@ layout = [[sg.Text('(Cidade)Nó de origem:', font=font), sg.DropDown(opcoes_cida
           [sg.Button('OK', font=font, button_color=('white', '#1E90FF'))]
         ]
 
+# Janela para calcular o nó de origem e destino
 start_node, end_node = open_window(layout)
-
-# Criação do dicionário para armazenar as posições dos nós
-node_positions = {}
-
-for i, node in enumerate(G.nodes()):
-    x = random.randint(NODE_SIZE, WIDTH-NODE_SIZE)
-    y = random.randint(NODE_SIZE, HEIGHT-NODE_SIZE)
-    node_positions[node] = (x, y)
 
 # Calcula o caminho mínimo usando o algoritmo de Dijkstra
 menor_caminho, distancia = G.dijkstra(start_node, end_node)
+caminho = " -> ".join([mapeamento[id] for id in menor_caminho]) # Passa a lista de menor caminho para uma string com o nome das cidades
 
-nomes_formatados = [mapeamento[id] for id in menor_caminho]
-caminho = " -> ".join(nomes_formatados)
+# Criação do dicionário para armazenar as posições dos nós
+node_positions = cidades_posicao()
 
 if __name__ == "__main__":
     # Loop principal
