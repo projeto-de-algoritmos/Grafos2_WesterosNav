@@ -1,4 +1,3 @@
-import random
 import pygame
 from pygame.locals import *
 import PySimpleGUI as sg
@@ -38,7 +37,7 @@ menor_caminho, distancia = G.dijkstra(start_node, end_node)
 caminho = " -> ".join([mapeamento[id] for id in menor_caminho]) # Passa a lista de menor caminho para uma string com o nome das cidades
 
 # Criação do dicionário para armazenar as posições dos nós
-node_positions = cidades_posicao()
+node_positions = cidades_posicao(G)
 
 if __name__ == "__main__":
     # Loop principal

@@ -1,5 +1,6 @@
 import PySimpleGUI as sg
 import pygame
+import random
 
 from utils.params import *
 
@@ -29,13 +30,13 @@ def draw_text(screen, text, pos):
     screen.blit(text_shadow, (pos[0]+2, pos[1]+2))
     screen.blit(text_surface, pos)
 
-def cidades_posicao():
+def cidades_posicao(grafo):
     """
     Determina a posição das cidades no mapa
     """
     node_positions = {}
 
-    for i, node in enumerate(G.nodes()):
+    for i, node in enumerate(grafo.nodes()):
         x = random.randint(NODE_SIZE, WIDTH-NODE_SIZE)
         y = random.randint(NODE_SIZE, HEIGHT-NODE_SIZE)
         node_positions[node] = (x, y)
