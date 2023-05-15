@@ -81,23 +81,35 @@ def gera_grafo(path):
     """
     grafo = Grafo()
     mapeamento = {}
+    posicoes = {}
 
-    # Le o arquivo JSON
+    # Lê o arquivo JSON
     with open(path, 'r') as f:
         data = json.load(f)
 
-    # Adiciona as cidades como vertices e armazena o mapeamento
+    # Adiciona as cidades como vértices e armazena o mapeamento
     for cidade in data['cities']:
-        grafo.adiciona_vertice(cidade['id'])
-        mapeamento[cidade['id']] = cidade['name']
+        cidade_id = cidade['id']
+        grafo.adiciona_vertice(cidade_id)
+        mapeamento[cidade_id] = cidade['name']
+
+        # Verifica se a chave 'posicoes' existe no dicionário 'cidade'
+        if 'posicoes' in cidade:
+            cidade_posicao = cidade['posicoes']
+        else:
+            # Se a chave 'posicoes' não existir, emite um aviso e atribui uma posição padrão [0, 0]
+            print(f"Aviso: A posição para a cidade ID {cidade_id} não foi encontrada.")
+            cidade_posicao = [0, 0]
+
+        posicoes[cidade_id] = cidade_posicao
 
     # Adiciona as fronteiras como arestas
     for fronteira in data['borders']:
         cidade1, cidade2 = fronteira['cidades']
         distancia = fronteira['distancia']
         grafo.adiciona_aresta(cidade1, cidade2, distancia)
-    
-    return grafo, mapeamento
+
+    return grafo, mapeamento, posicoes
 
 def opcoes_cidades(mapeamento):
     """
