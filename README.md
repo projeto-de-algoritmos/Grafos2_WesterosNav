@@ -28,6 +28,12 @@ O mapeamento, isto é, a operação de passar o mapa de Westeros para um grafo (
 
 - [youtube](https://www.youtube.com/watch?v=-AC-JlozkYk)
 
+ 
+
+https://github.com/projeto-de-algoritmos/Grafos2_WesterosNav/assets/78980842/9715a0cb-6a00-4e87-a457-4a03142db26c
+
+
+
 ## Instalação 
 **Linguagem**: Python<br>
 **Framework**: Pygame<br>
